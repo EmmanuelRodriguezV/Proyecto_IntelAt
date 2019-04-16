@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="217.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane cache="true" cacheHint="QUALITY" prefHeight="496.0" prefWidth="400.0">
+         <children>
+            <ImageView cache="true" cacheHint="QUALITY" fitHeight="163.0" fitWidth="127.0" layoutX="45.0" layoutY="150.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.gif" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </ImageView>
+            <Label prefHeight="55.0" prefWidth="217.0" style="-fx-background-color: #495363; -fx-font-style: FFFF; -fx-text-alignment: center;" text="   intel at" textFill="WHITE">
+               <font>
+                  <Font size="41.0" />
+               </font>
+            </Label>
+            <Label layoutX="138.0" layoutY="469.0" opacity="0.29" text="Ver 0.0.17a" />
+            <ImageView cache="true" cacheHint="SPEED" fitHeight="81.0" fitWidth="74.0" layoutX="72.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/elipse.gif" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</VBox>
