@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.text.Font?>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label prefHeight="55.0" prefWidth="617.0" style="-fx-background-color: #495363; -fx-font-style: FFFF; -fx-text-alignment: center;" text="                   intel at" textFill="WHITE">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <TextField id="textId" layoutX="182.0" layoutY="101.0" prefHeight="26.0" prefWidth="267.0" promptText="ID"/>
+      <TextField id="txtNombreServ" layoutX="182.0" layoutY="146.0" prefHeight="26.0" prefWidth="267.0" promptText="Nombre"/>
+      <TextField id="txtEmail" layoutX="182.0" layoutY="188.0" prefHeight="26.0" prefWidth="267.0" promptText="Email"/>
+      <TextField id="txtTelefono" layoutX="182.0" layoutY="235.0" prefHeight="26.0" prefWidth="267.0" promptText="Telefono"/>
+      <Button layoutX="110.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-color: #495363;" text="Guardar" textFill="white"/>
+      <Button id="btnModificar" layoutX="226.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-color: #495363;" text="Modificar" textFill="white"/>
+      <Button id="btnBorrar" layoutX="333.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-color: #495363;" text="Borrar" textFill="white"/>
+      <Button id="btnLimpiar" layoutX="406.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-color: #495363;" text="Limpiar" textFill="white" />
+      <Label layoutX="529.0" layoutY="376.0" opacity="0.29" text="Ver 0.0.17a" />
+   </children>
+</AnchorPane>
