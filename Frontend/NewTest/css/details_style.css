@@ -27,7 +27,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-width: 300px;
+    min-width: 320px;
     margin: 50px 0px 50px 0px;
 }
 
@@ -39,7 +39,8 @@
 #pb-div #progressbar li {
     list-style-type: none;
     color: #99A2A8;
-    font-size: 9px;
+    font-size: 14px;
+    font-weight: bold;
     width: calc(100%/4);
     float: left;
     position: relative;
@@ -64,10 +65,10 @@
 
 #pb-div #progressbar li:before {
     content: "\f122";
-    font: normal normal normal 30px/50px Ionicons;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+    font: normal normal normal 40px/50px Ionicons;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
     display: block;
     background: #EAF0F4;
     border-radius: 50%;
@@ -83,7 +84,7 @@
     height: 10px;
     background:#EAF0F4;
     position: absolute;
-    top: 15px;
+    top: 25px;
     left: -41.8%;
 }
 
@@ -140,7 +141,7 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #F1F1F1;
-    min-width: 270px;
+    min-width: 300px;
     overflow: hidden;
     box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.1);
     padding: 30px;
