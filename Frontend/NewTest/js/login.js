@@ -1,21 +1,25 @@
-const input = () => {
-    const loginDiv = document.querySelector('.login-input')
-    const loginInput = document.querySelector('.login-input input')
-    const loginInputP = document.getElementById('input-p')
-    const errorMessage = document.querySelector('.error-msg')
-    const loginBut = document.querySelector('.login-button')
+const loginDiv = document.querySelector('.login-input')
+const loginInput = document.querySelector('.login-input input')
+const loginInputP = document.getElementById('input-p')
+const errorMessage = document.querySelector('.error-msg')
+const loginBut = document.querySelector('.login-button')
 
+const actives = () => {
+    errorMessage.classList.toggle('msg-active')
+    loginInputP.classList.toggle('input-icon')
+    loginInputP.classList.toggle('wrong-input')
+    loginDiv.classList.toggle('wrong-input-in')
+    loginInput.classList.toggle('wrong-input-in')
+}
+
+const input = () => {
     loginDiv.addEventListener('click', () => {
         loginInput.focus()
     })
 
     loginInput.addEventListener('focusin', () => {
         if(loginDiv.classList.contains('wrong-input-in')) {
-            errorMessage.classList.toggle('msg-active')
-            loginInputP.classList.toggle('wrong-input')
-            loginInputP.classList.toggle('input-icon')
-            loginDiv.classList.toggle('wrong-input-in')
-            loginInput.classList.toggle('wrong-input-in')
+            actives()
         }
         loginDiv.classList.toggle('input-focused')
     })
@@ -27,11 +31,9 @@ const input = () => {
     loginBut.addEventListener('click', () => {
         if(loginInput.value != "test") {
             loginInput.value = ''
-            errorMessage.classList.toggle('msg-active')
-            loginInputP.classList.toggle('input-icon')
-            loginInputP.classList.toggle('wrong-input')
-            loginDiv.classList.toggle('wrong-input-in')
-            loginInput.classList.toggle('wrong-input-in')
+            if(!loginDiv.classList.contains('wrong-input-in')) {
+                actives()
+            }
         } else {
             location.href = 'details.html'
         }
