@@ -9,6 +9,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-weight: lighter;
 }
 
 #nav-bar {
@@ -17,13 +18,14 @@
     font-family: 'Open Sans', sans-serif;
     color: #FFF;
     width: 100%;
-    min-width: 270px;
+    min-width: 300px;
     min-height: 70px;
-    background-color: #2F89FC;
+    background-color: #393e46;
     box-shadow: 0px -4px 10px 3px rgba(0, 0, 0, 0.6);
     justify-content: space-between;
-    position: relative;
+    position: fixed;
     white-space: nowrap;
+    z-index: 100;
 }
 
 #nav-bar .logo a {
@@ -46,8 +48,22 @@
     margin: 0px 18px 0px 0px;
 }
 
-#nav-bar .content .nav-links {
+#nav-bar .content .nav-links, .nav-mob ul {
     display: flex;
+}
+
+.nav-mob {
+    width: 50%;
+    position: fixed;
+    display: none;
+    z-index: 102;
+    right: -100%;
+    top: 69px;
+    height: 100%;
+    background-color: #393e46;
+    color: #fff;
+    min-height: 450px;
+    min-width: 150px;
 }
 
 #nav-bar .content li {
@@ -58,18 +74,36 @@
     margin: 25px 0px 0px 30px;
 }
 
+.nav-mob ul {
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-mob ul li {
+    list-style: none;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
 #nav-bar .content li:hover {
     opacity: 0.7;
 }
 
-#nav-bar a {
+#nav-bar a, .nav-mob ul li a {
     text-decoration: none;
     color: inherit;
 }
 
+.nav-mob ul li a:hover {
+    opacity: 0.7;
+}
+
 .burger {
     cursor: pointer;
-    padding: 30px 18px 22px 18px;
+    margin: 30px 0px 0px 0px;
     display: none;
     left: 100%;
 }
@@ -82,11 +116,11 @@
     transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 531px) {
-    body {
-      overflow-x: hidden;
+@media screen and (max-width: 670px) {  
+    .body {
+        overflow-x: hidden;
     }
-  
+
     .burger {
         display: block;
     }
@@ -106,6 +140,60 @@
     #nav-bar .logo img:hover {
         transform: scale(1.1);
     }
+
+    .nav-mob {
+        transition: transform 0.25s ease-in;
+        transform: translateX(-100%);
+        display: flex;
+    }
+
+    .container {
+        height: 100%;
+    }
+
+    .footer .row {
+        flex-flow: column;
+        align-items: center;
+        text-align: center;
+        margin: 0px;
+    }
+
+    .footer .col-8 {
+        flex-flow: column;
+    }
+
+    .footer .col-4 div {
+        flex-flow: column;
+        justify-items: center;
+    }
+
+    .footer .col-4 a:before {
+        margin-left: 30px;
+    }
+}
+
+.side-content {
+    transition: transform 0.25s ease-in;
+    transform: translateX(-200%);
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+
+.nav-darken {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 80;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.show-darken {
+    display: flex;
 }
 
 .toggle .line1 {
@@ -120,135 +208,116 @@
     transform: rotate(45deg) translate(-3px, -5px);
 }
 
-#second-section {
+.footer {
     width: 100%;
-    height: 90vh;
     display: flex;
-    flex-flow: column;
+    height: auto;
+    background-color: #393e46;
     align-items: center;
     justify-content: center;
-    background-color: #F1F1F1;
-    min-width: 270px;
-    z-index: -2;
-}
-
-#pb-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-#pb-div #progressbar ul {
-    overflow: hidden;
-}
-
-#pb-div #progressbar li {
-    list-style-type: none;
-    color: #99A2A8;
-    font-size: 9px;
-    width: calc(100%/4);
-    float: left;
+    min-width: 300px;
     position: relative;
-    font: 500 13px/1 "Roboto", sans-serif;
-    text-align: center;
+    z-index: 0;
+    box-shadow: 0px -1px 10px 4px rgba(0, 0, 0, 0.25);
 }
 
-#pb-div #progressbar {
+.footer::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(../media/images/CargaOP1_with-margin.gif) top 0 left 0/260px auto,url(../media/images/CargaOP1_with-margin.gif) top 65px left 130px/260px auto;
+    opacity: .05;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
     width: 100%;
+    background: rgba(51, 51, 51, 0.082);
+    background-image: linear-gradient(to right, rgba(204, 204, 204, 0.15), rgba(51, 51, 51, 0.1), rgba(204, 204, 204, 0.15));
+    margin: 10px 0px 20px 0px;
 }
 
-#pb-div #progressbar li:before {
-    content: "\f122";
-    font: normal normal normal 30px/50px Ionicons;
+hr.style-two {
+    border: 0;
+    height: 1px;
+    width: 150px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
+}
+
+.footer ul {
+    font-weight: lighter;
+}
+
+.footer li {
+    list-style: none;
+    color: #eeeeee;
+    font: 0 15px/1 "Roboto", sans-serif;
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer .col-4 a {
+    color: #eeeeee;
+    transition: transform 0.2s ease-in;
+}
+
+.footer .col-8 a:hover {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.footer .col-4 a:before {
+    font: normal normal normal 30px/10px Ionicons;
     width: 40px;
     height: 40px;
     line-height: 40px;
     display: block;
-    background: #EAF0F4;
-    border-radius: 50%;
-    margin: 0 auto 10px auto;
-    text-align: center;
-    position: relative;
-    z-index: 10;
 }
 
-#pb-div #progressbar li:after {
-    content: '';
-    width: 92%;
-    height: 10px;
-    background:#EAF0F4;
-    position: absolute;
-    top: 15px;
-    left: -41.8%;
+.footer .twitter:before {
+    content: "\f243";
 }
 
-#pb-div #progressbar li:last-child:after {
-    width: 200%;
+.footer .facebook:before {
+    content: "\f231";
 }
 
-#pb-div #progressbar li.active {
-    color: #5CB85C;
+.footer .youtube:before {
+    content: "\f24d";
 }
 
-#pb-div #progressbar li.active:before, #pb-div #progressbar li.active:after {
-    background: #5CB85C;
-    color: #FFF;
+.footer .linkedin:before {
+    content: "\f239";
 }
 
-.footer {
-    width: 100%;
-    display: flex;
-    height: 270px;
-    background-color: darkolivegreen;
-    align-items: center;
-    justify-content: center;
-    min-width: 270px;
+.footer .col-4 .twitter:hover {
+    color: #1da1f2;
+    transform: translateY(-5px);
 }
 
-#test {
-    border: 0 none;
-    border-radius: 5px;
-    cursor: pointer;
-    min-width: 130px;
-    font: 700 14px/40px "Roboto", sans-serif;
-    border: 1px solid #99a2a8;
-    margin: 0 5px;
-    text-transform: uppercase;
-    display: inline-block;
-    background: transparent;
-    color: #99a2a8;
+.footer .col-4 .facebook:hover {
+    color: #3b5998;
+    transform: translateY(-5px);
 }
 
-#test:focus {
-    background: #405867;
-    border-color: #405867;
-    color: #fff;
+.footer .col-4 .youtube:hover {
+    color: #ff0000;
+    transform: translateY(-5px);
 }
 
-#test:hover, #test:focus {
-    background: #405867;
-    border-color: #405867;
+.footer .col-4 .linkedin:hover {
+    color: #0077B5;
+    transform: translateY(-5px);
 }
 
-#test-div {
-    width: 100vw;
-    min-width: 270px;
-    overflow-x: auto;
-}
-
-#second-section #container {
-    width: 100%;
-    height: 100%;
-    max-width: 980px;
-    max-height: 650px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #F1F1F1;
-    min-width: 270px;
-    overflow: hidden;
-    box-shadow: 0px -1px 10px 3px rgba(0, 0, 0, 0.3);
-    padding: 20px;
+.footer p {
+    color: #eeeeee;
+    font: 0 15px/1 "Roboto", sans-serif;
 }
