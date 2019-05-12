@@ -168,7 +168,7 @@
     }
 
     .footer .col-4 a:before {
-        margin-left: 30px;
+        align-content: center;
     }
 }
 
@@ -275,7 +275,6 @@ hr.style-two {
 
 .footer .col-4 a:before {
     font: normal normal normal 30px/10px Ionicons;
-    width: 40px;
     height: 40px;
     line-height: 40px;
     display: block;

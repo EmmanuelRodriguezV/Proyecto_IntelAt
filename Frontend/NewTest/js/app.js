@@ -16,6 +16,10 @@ const navSlide = () => {
     burger.addEventListener('click', () => {
         toggles()
     });
+
+    navDark.addEventListener('click', () => {
+        toggles()
+    })
 }
 
 window.onresize = () => {

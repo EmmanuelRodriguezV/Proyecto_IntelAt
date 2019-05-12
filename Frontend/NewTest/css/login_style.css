@@ -132,12 +132,14 @@
 }
 
 .error-msg {
-    margin: 30px 20px 0px 20px;
+    margin: 0px 20px 0px 20px;
     font-size: 18px;
     color: red;
     font-weight: normal;
     text-align: center;
     opacity: 0;
+    cursor: default;
+    user-select: none;
 }
 
 .msg-active {
