@@ -163,7 +163,6 @@
     }
 
     .footer .col-4 div {
-        flex-flow: column;
         justify-items: center;
     }
 
