@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     require '../backend/loguear.php';
 ?>
 
@@ -38,7 +38,7 @@
         <div class="nav-darken"></div>
         <div class="nav-mob">
             <ul>
-                <li><a href="#">Nosotros</a></li>
+                <li><a href="video.html">Nosotros</a></li>
                 <li><a href="#">Contactanos</a></li>
                 <li><a href="#">Ubicación</a></li>
             </ul>
@@ -74,7 +74,7 @@
                         <ul>
                             <li><h5>IntelAt</h5></li>
                             <li><a href="#">Acerca de</a></li>
-                            <li><a href="#">Contactanos</a></li>
+                            <li><a href="video.html">Contactanos</a></li>
                             <li><a href="#">Cultura</a></li>
                             <li><a href="#">Proveedores</a></li>
                         </ul>
