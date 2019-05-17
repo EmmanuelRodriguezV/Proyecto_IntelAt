@@ -3,16 +3,17 @@
     session_start();
     $varsesion= $_SESSION['nombre'];
     $siniestro=$_SESSION['siniestro'];
+    $estado=$_SESSION['estado'];
     if($varsesion==null||$varsesion=''){
         echo 'usted no esta autorizado';
         header("location: index.php");
+      print_r($estado);
     }
-
     require '../Backend/conexion.php';
     $query=mysqli_query($conexion,"SELECT * FROM partes WHERE ID_SINIESTRO='$siniestro' ");
-
-
+   
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,14 +29,14 @@
     <body>
         <div id="nav-bar">
             <div class="logo">
-                <a href="index.html">
+                <a href="details.php">
                     <img src="media/images/CargaOP1.gif">
                     <h3>IntelAt</h3>
                 </a>
             </div>
             <div class="content">
                 <ul class="nav-links">
-                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="video.html">Nosotros</a></li>
                     <li><a href="#"> <?php echo $_SESSION['nombre'] ?> </a></li>
                     <li><a href="../backend/salir.php">SALIR</a></li>
                 </ul>
@@ -104,7 +105,7 @@
                 <hr class="style-two">
                 <div class="table-responsive" style="margin:30px 0px 50px 0px;font-family:'Roboto',sans-serif;font-weight: lighter;">
                 
-                    <table class="table table-hover">
+                    <table class="table table-hover"id='contenido'>
                         <thead class="thead" style="background-color:#393e46;color:#fff;">
                             <tr>
                                 <th style="width:calc(100%/3);">PIEZA</th>
@@ -113,19 +114,20 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <?php
-                         while($extraido=mysqli_fetch_array($query)){
-                            echo '<tr>';
-                            echo '<td>'.$extraido['PIEZA'].'</td>';
-                            echo '<td>'.$extraido['PRECIO'].'</td>';
-                            echo '<td>'.$extraido['FECHA'].'</td>';                         
-                            echo '</tr>';
-                         }
-                         ?>
+                            <?php
+                                 while($extraido=mysqli_fetch_array($query)){
+                                    echo '<tr>';
+                                    echo '<td>'.$extraido['PIEZA'].'</td>';
+                                    echo '<td>'.$extraido['PRECIO'].'</td>';
+                                    echo '<td>'.$extraido['FECHA'].'</td>';                         
+                                    echo '</tr>';
+                                 }                            
+                            
+                            ?>
                         </tbody>
                     </table>
                 </div>
-                <button type="button" id="test">Test</button>
+               
             </div>
         </div>
         <div class="footer">
@@ -172,5 +174,27 @@
         <script src="js/details.js"></script>
         <script src="vendor/jquery-3.4.1.min.js"></script>
         <script src="vendor/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+
+
+
+    <script>
+
+       const progress = () => {
+        var con = "<?php echo $_SESSION['estado']; ?>";
+     //  var index = 0;
+        var index;
+        
+        for(index=2;index<=con;index++){
+           
+            
+             var progressbar = document.querySelector(`#progressbar li:nth-child(${index})`)
+            
+             progressbar.classList.toggle('active')
+           
+     }
+}
+     progress();
+    
+    </script>
     </body>
 </html>

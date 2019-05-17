@@ -1,7 +1,7 @@
 <?php
 
 require 'conexion.php';
-$alert='';
+sleep(1);
 
 session_start();
 if(!empty($_SESSION['active'])){
@@ -12,9 +12,9 @@ if(!empty($_SESSION['active'])){
 if(!empty($_POST)){
     if(empty($_POST['siniestro'])){
   
-
+        echo json_encode(array('error'=>true));
         $alert ='Ingrese su numero de siniestro'; 
-        header("location: ../frontend/index.php");
+      //  header("location: ../frontend/index.php");
       
 }
 else{
@@ -36,19 +36,22 @@ else{
         $_SESSION['disponible']=$data['DISPONIBLE'];
         $_SESSION['estado']=$data['ESTADO_AVANCE'];
 
-        header("location: ../frontend/details.php");
-        
+    //    header("location: ../frontend/details.php");
+    echo json_encode(array('error'=>false));
 
     }
     else{
+        echo json_encode(array('error'=>true));
         $alert ='El usuario o la clave son incorrectas';
         session_destroy();
-        header("location: ../frontend/index.php");
+        //header("location: ../frontend/index.php");
+      
     }
 
         }
     }
 }
+
 
 /*
 $siniestro=$_POST['siniestro'];

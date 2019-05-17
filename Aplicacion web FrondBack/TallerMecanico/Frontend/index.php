@@ -1,4 +1,4 @@
-﻿<?php
+<?php
     require '../backend/loguear.php';
 ?>
 
@@ -15,16 +15,21 @@
         <title>IntelAt</title>
     </head>
     <body>
+
+    
         <div id="nav-bar">
+        <div class="error">
+        <span>Datos de ingreso no validos,intentalo de nuevo</span>
+    </div>
             <div class="logo">
-                <a href="#">
+                <a href="index.php">
                     <img src="media/images/CargaOP1.gif">
                     <h3>IntelAt</h3>
                 </a>
             </div>
             <div class="content">
                 <ul class="nav-links">
-                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="video.html">Nosotros</a></li>
                     <li><a href="#">Contactanos</a></li>
                     <li><a href="#">Ubicación</a></li>
                 </ul>
@@ -38,13 +43,13 @@
         <div class="nav-darken"></div>
         <div class="nav-mob">
             <ul>
-                <li><a href="video.html">Nosotros</a></li>
+            <li><a href="video.html">Nosotros</a></li>
                 <li><a href="#">Contactanos</a></li>
                 <li><a href="#">Ubicación</a></li>
             </ul>
         </div>
 
-    <form action="../backend/loguear.php" method="POST" id="formlg">
+    <form action="" id="formlg">
         <div id="login-section">
             <div id="login-container">
                 <h3 style="opacity:0.6;font-weight:lighter;text-align:center;margin:20px 0px 0px 0px;">Ingresa tu Número de Siniestro</h3>
@@ -60,9 +65,8 @@
                     <input type="text" name="siniestro" id="number-s" placeholder="Número Siniestro" required>
                 </div>
                 <div class="alert">
-                <?php echo isset($alert) ? $alert:''; ?>    
                 </div>
-                <button type="submit" class="login-button">Ingresar</button>
+                <input type="submit"class="login-button" value="Ingresar"/>
             </div>
         </div>
 
@@ -74,7 +78,7 @@
                         <ul>
                             <li><h5>IntelAt</h5></li>
                             <li><a href="#">Acerca de</a></li>
-                            <li><a href="video.html">Contactanos</a></li>
+                            <li><a href="#">Contactanos</a></li>
                             <li><a href="#">Cultura</a></li>
                             <li><a href="#">Proveedores</a></li>
                         </ul>
@@ -108,8 +112,9 @@
             </div>
         </div>
         <script src="js/app.js"></script>
-        <script src="js/login.js"></script>
+        
         <script src="vendor/jquery-3.4.1.min.js"></script>
+        <script src="js/login.js"></script>
         <script src="vendor/bootstrap-4.3.1-dist/js/bootstrap.js"></script>
     </body>
 </html>

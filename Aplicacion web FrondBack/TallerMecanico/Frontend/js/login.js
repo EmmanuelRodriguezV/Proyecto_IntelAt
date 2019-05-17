@@ -1,8 +1,8 @@
 jQuery(document).on('submit','#formlg',function(event){
     event.preventDefault();
 
-
     jQuery.ajax({
+        
         url:'../backend/loguear.php',
         type:'POST',
         dataType:'json',
@@ -15,22 +15,24 @@ jQuery(document).on('submit','#formlg',function(event){
     })
     .done(function(respuesta){
         console.log(respuesta);
-
+        
         if(!respuesta.error){
-           location.href='../frontend/login'
-        }
-        else{
-            $('error').slideDown('slow');
-            setTimeout(function(){
-                $('.error').slideUp('slow');
-            },3000);
-            $('.login-button').val('Ingresar');
-        }
+            location.href='../frontend/details.php';
+            console.log("entra");
+         }
+         else{
+             $('.error').slideDown('slow');
+             setTimeout(function(){
+                 $('.error').slideUp('slow');
+             },3000);
+             $('.login-button').val('Ingresar');
+         }
+       
     })
     .fail(function(resp){
        
     })
-    .always(function(){
+    .always(function(respuesta){
         console.log((" complete"));
     });
 });
